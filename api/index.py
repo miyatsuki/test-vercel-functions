@@ -1,7 +1,18 @@
 from flask import Flask, Response
 app = Flask(__name__)
 
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def catch_all(path):
-    return Response("<h1>Flask</h1><p>You visited: /%s</p>" % (path), mimetype="text/html")
+@app.route('/api/test1')
+def catch1(path):
+    return Response("<h1>Flask</h1><p>You visited:test1", mimetype="text/html")
+
+@app.route('/api/test2')
+def catch1(path):
+    return Response("<h1>Flask</h1><p>You visited:test2", mimetype="text/html")
+
+@app.route('/api/test3')
+def catch1(path):
+    return Response("<h1>Flask</h1><p>You visited:test3", mimetype="text/html")
+
+@app.route('/api/test4')
+def catch1(path):
+    return Response("<h1>Flask</h1><p>You visited:test4", mimetype="text/html")
