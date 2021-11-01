@@ -1,29 +1,11 @@
-from flask import Flask
+from fastapi import FastAPI
 
+app = FastAPI()
 
-app = Flask(__name__)
+@app.get("/")
+async def root():
+    return {"message": "Hello World!!"}
 
-
-@app.route('/api/home')
-def home():
-    return 'Home Page Route'
-
-
-@app.route('/api/about')
-def about():
-    return 'About Page Route'
-
-
-@app.route('/api/portfolio')
-def portfolio():
-    return 'Portfolio Page Route'
-
-
-@app.route('/api/contact')
-def contact():
-    return 'Contact Page Route'
-
-
-@app.route('/api')
-def api():
-    return "api"
+@app.get("/hoge")
+async def hoge():
+    return {"message": "Hello Hoge!!"}
